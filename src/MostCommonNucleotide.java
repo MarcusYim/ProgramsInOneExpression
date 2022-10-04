@@ -18,7 +18,7 @@ public class MostCommonNucleotide
     {
         return letters[IntStream.range(0, Stream.of(dna.split(""))
                         .collect(Collectors.groupingBy(String::valueOf, Collectors.counting())).size())
-                .reduce( (a, b) -> Stream.of(dna.split(""))
+                        .reduce( (a, b) -> Stream.of(dna.split(""))
                         .collect(Collectors.groupingBy(String::valueOf, Collectors.counting()))
                         .get(letters[a]) < Stream.of(dna.split(""))
                         .collect(Collectors.groupingBy(String::valueOf, Collectors.counting()))
